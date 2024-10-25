@@ -110,17 +110,17 @@ console.log(printArray)
  * @param {number} max the index from where to end the portion of the given array
  */
 function portionArray(array, min, max = array.length - 1) {
-    if (
-        min > max ||
-        min < 0 ||
-        max > array.length ||
-        isNaN(min) ||
-        isNaN(max)
-    ) {
+    const outputArray = []
+    let newMin = min
+
+    if (min > max || max > array.length || isNaN(min) || isNaN(max)) {
         return
     }
 
-    const outputArray = []
+    if (min < 0 && max === array.length - 1) {
+        min = max + (min + 1)
+    }
+
     for (let i = min; i <= max; i++) {
         outputArray.push(array[i])
     }
@@ -128,4 +128,4 @@ function portionArray(array, min, max = array.length - 1) {
     return outputArray
 }
 
-console.log(portionArray(squadre, 3))
+console.log(portionArray(squadre, -2))
