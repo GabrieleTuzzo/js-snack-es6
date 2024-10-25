@@ -111,7 +111,6 @@ console.log(printArray)
  */
 function portionArray(array, min, max = array.length - 1) {
     const outputArray = []
-    let newMin = min
 
     if (min > max || max > array.length || isNaN(min) || isNaN(max)) {
         return
