@@ -16,35 +16,33 @@ function populateSquadre() {
 }
 
 // Snack #1
-const argon = {
-    nome: 'argon',
-    peso: getRandomIntInclusive(minBikeWeight, maxBikeWeight),
-}
+const biciArray = [
+    {
+        nome: 'argon',
+        peso: getRandomIntInclusive(minBikeWeight, maxBikeWeight),
+    },
+    {
+        nome: 'bergamont',
+        peso: getRandomIntInclusive(minBikeWeight, maxBikeWeight),
+    },
+    {
+        nome: 'bianchi',
+        peso: getRandomIntInclusive(minBikeWeight, maxBikeWeight),
+    },
+]
 
-const bergamont = {
-    nome: 'bergamont',
-    peso: getRandomIntInclusive(minBikeWeight, maxBikeWeight),
-}
-
-const bianchi = {
-    nome: 'bianchi',
-    peso: getRandomIntInclusive(minBikeWeight, maxBikeWeight),
-}
-
-const bici = [argon, bergamont, bianchi]
-
-console.log(bici)
+console.log(biciArray)
 
 let lightestIndex
-let lightestWeight = bici[0].peso
-for (let i = 0; i < bici.length; i++) {
-    const currentWeight = bici[i].peso
+let lightestWeight = biciArray[0].peso
+for (let i = 0; i < biciArray.length; i++) {
+    const currentWeight = biciArray[i].peso
     if (currentWeight <= lightestWeight) {
         lightestIndex = i
     }
 }
 
-const lightestBike = bici[lightestIndex]
+const lightestBike = biciArray[lightestIndex]
 
 // Stampa solo L'ULTIMA bici più leggera trovata
 for (let key in lightestBike) {
@@ -52,43 +50,38 @@ for (let key in lightestBike) {
 }
 
 // Snack #2
-const palermo = {
-    nome: 'Palermo',
-    'punti fatti': 0,
-    'falli subiti': 0,
-}
-
-const germania = {
-    nome: 'Germania',
-    'punti fatti': 0,
-    'falli subiti': 0,
-}
-
-const spagna = {
-    nome: 'Spagna',
-    'punti fatti': 0,
-    'falli subiti': 0,
-}
-
-const atalanta = {
-    nome: 'Atalanta',
-    'punti fatti': 0,
-    'falli subiti': 0,
-}
-
-const bologna = {
-    nome: 'Bologna',
-    'punti fatti': 0,
-    'falli subiti': 0,
-}
-
-const fiorentina = {
-    nome: 'Fiorentina',
-    'punti fatti': 0,
-    'falli subiti': 0,
-}
-
-const squadre = [palermo, germania, spagna, atalanta, bologna, fiorentina]
+const squadre = [
+    {
+        nome: 'Palermo',
+        'punti fatti': 0,
+        'falli subiti': 0,
+    },
+    {
+        nome: 'Germania',
+        'punti fatti': 0,
+        'falli subiti': 0,
+    },
+    {
+        nome: 'Spagna',
+        'punti fatti': 0,
+        'falli subiti': 0,
+    },
+    {
+        nome: 'Atalanta',
+        'punti fatti': 0,
+        'falli subiti': 0,
+    },
+    {
+        nome: 'Bologna',
+        'punti fatti': 0,
+        'falli subiti': 0,
+    },
+    {
+        nome: 'Fiorentina',
+        'punti fatti': 0,
+        'falli subiti': 0,
+    },
+]
 
 populateSquadre()
 
