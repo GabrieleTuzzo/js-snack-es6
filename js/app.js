@@ -70,7 +70,25 @@ const spagna = {
     'falli subiti': 0,
 }
 
-const squadre = [palermo, germania, spagna]
+const atalanta = {
+    nome: 'Atalanta',
+    'punti fatti': 0,
+    'falli subiti': 0,
+}
+
+const bologna = {
+    nome: 'Bologna',
+    'punti fatti': 0,
+    'falli subiti': 0,
+}
+
+const fiorentina = {
+    nome: 'Fiorentina',
+    'punti fatti': 0,
+    'falli subiti': 0,
+}
+
+const squadre = [palermo, germania, spagna, atalanta, bologna, fiorentina]
 
 populateSquadre()
 
@@ -82,3 +100,32 @@ squadre.forEach((element) => {
 })
 
 console.log(printArray)
+
+// Snack #3
+
+/**
+ * Returns a new array by portioning a given array based on min index and maximum index, returns undefined if data is not correct
+ * @param {*} array array to portion
+ * @param {number} min the index from where to start the portion of the given array
+ * @param {number} max the index from where to end the portion of the given array
+ */
+function portionArray(array, min, max = array.length - 1) {
+    if (
+        min > max ||
+        min < 0 ||
+        max > array.length ||
+        isNaN(min) ||
+        isNaN(max)
+    ) {
+        return
+    }
+
+    const outputArray = []
+    for (let i = min; i <= max; i++) {
+        outputArray.push(array[i])
+    }
+
+    return outputArray
+}
+
+console.log(portionArray(squadre, 3))
